@@ -1,0 +1,328 @@
+.version.home /* version checker */
+{
+	color: #00000B;
+	background-color: #7CAB4A;
+}
+
+.html
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 960px;
+	min-height: 438px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	padding-bottom: 62px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#u95
+{
+	z-index: 2;
+	min-height: 1004px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: fixed;
+	top: 0px;
+}
+
+#u95-bw
+{
+	z-index: 2;
+}
+
+#u636
+{
+	z-index: 4;
+	width: 27px;
+	height: 452px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 482px;
+	left: -53px;
+}
+
+#u2054
+{
+	z-index: 11;
+	width: 302px;
+	height: 104px;
+	position: fixed;
+	bottom: 31px;
+	left: 100px;
+	background: transparent url("../images/text%20a%20friend%20but-normal%20copy.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u2054:hover
+{
+	width: 302px;
+	height: 104px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/text%20a%20friend%20but-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u2054:active
+{
+	width: 302px;
+	height: 104px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/text%20a%20friend%20but-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u2126
+{
+	z-index: 12;
+	width: 136px;
+	height: 181px;
+	position: fixed;
+	top: 62px;
+	left: 124px;
+	background: transparent url("../images/pin-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u2126:hover
+{
+	width: 136px;
+	height: 181px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/pin-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u2126:active
+{
+	width: 136px;
+	height: 181px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/pin-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u297
+{
+	z-index: 9;
+	width: 387px;
+	height: 90px;
+	position: fixed;
+	top: 82px;
+	right: 100px;
+	background: transparent url("../images/plant%20a%20star%20button-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u297.MuseLinkActive
+{
+	width: 387px;
+	height: 90px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/plant%20a%20star%20button-active.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u206
+{
+	z-index: 6;
+	width: 193px;
+	height: 58px;
+	position: fixed;
+	top: 241px;
+	right: 100px;
+	background: transparent url("../images/location%20but-vibrance%201.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u206:hover
+{
+	width: 193px;
+	height: 58px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/location%20but-vibrance%202.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u206:active
+{
+	width: 193px;
+	height: 58px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/location%20but-vibrance%203.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u248
+{
+	z-index: 8;
+	width: 169px;
+	height: 57px;
+	position: fixed;
+	bottom: 50px;
+	right: 100px;
+	background: transparent url("../images/signup%20but-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u248:hover
+{
+	width: 169px;
+	height: 57px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/signup%20but-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u248:active
+{
+	width: 169px;
+	height: 57px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/signup%20but-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u409
+{
+	z-index: 10;
+	width: 164px;
+	height: 55px;
+	position: fixed;
+	top: 381px;
+	right: 100px;
+	background: transparent url("../images/tix%20but-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u409:hover
+{
+	width: 164px;
+	height: 55px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/tix%20but-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u409:active
+{
+	width: 164px;
+	height: 55px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/tix%20but-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u227
+{
+	z-index: 7;
+	width: 152px;
+	height: 55px;
+	position: fixed;
+	top: 313px;
+	right: 100px;
+	background: transparent url("../images/events%20but-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u227:hover
+{
+	width: 152px;
+	height: 55px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/events%20but-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u227:active
+{
+	width: 152px;
+	height: 55px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/events%20but-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u185
+{
+	z-index: 5;
+	width: 140px;
+	height: 56px;
+	position: fixed;
+	top: 172px;
+	right: 100px;
+	background: transparent url("../images/about%20button-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u185:hover
+{
+	width: 140px;
+	height: 56px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/about%20button-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u185:active
+{
+	width: 140px;
+	height: 56px;
+	min-height: 0px;
+	margin: 0px;
+	background: transparent url("../images/about%20button-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u97
+{
+	z-index: 3;
+	width: 53px;
+	height: 717px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 172px;
+	left: 983px;
+}
+
+.ie #u636,.ie #u97
+{
+	background-color: #FFFFFF;
+	opacity: 0.01;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+	filter: alpha(opacity=1);
+}
+
+body
+{
+	position: relative;
+	min-width: 960px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+

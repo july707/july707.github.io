@@ -1,0 +1,144 @@
+.version.about /* version checker */
+{
+	color: #00001E;
+	background-color: #A36DA4;
+}
+
+.html
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 960px;
+	min-height: 500px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page_position_content
+{
+	padding-top: 243px;
+	padding-bottom: 62px;
+	width: 0.01px;
+}
+
+#u1771
+{
+	z-index: 11;
+	width: 387px;
+	height: 90px;
+	position: fixed;
+	top: 67px;
+	left: 50%;
+	margin-left: -194px;
+	background: transparent url("../images/plant%20a%20star%20button-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u1771:hover
+{
+	width: 387px;
+	height: 90px;
+	min-height: 0px;
+	margin: 0px 0px 0px -194px;
+	background: transparent url("../images/plant%20a%20star%20button-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u1771:active
+{
+	width: 387px;
+	height: 90px;
+	min-height: 0px;
+	margin: 0px 0px 0px -194px;
+	background: transparent url("../images/plant%20a%20star%20button-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#pu1272
+{
+	width: 0.01px;
+	margin-left: -9px;
+}
+
+#u1272
+{
+	z-index: 2;
+	width: 977px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u288-7
+{
+	z-index: 4;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 209px;
+	left: 95px;
+}
+
+#u2125-6
+{
+	z-index: 13;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 68px;
+	left: 238px;
+}
+
+#u1772
+{
+	z-index: 12;
+	width: 135px;
+	height: 49px;
+	margin-left: 412px;
+	margin-top: 131px;
+	position: relative;
+	background: transparent url("../images/home%20but-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u1772:hover
+{
+	width: 135px;
+	height: 49px;
+	min-height: 0px;
+	margin: 131px 0px 0px 412px;
+	background: transparent url("../images/home%20but-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u1772:active
+{
+	width: 135px;
+	height: 49px;
+	min-height: 0px;
+	margin: 131px 0px 0px 412px;
+	background: transparent url("../images/home%20but-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+body
+{
+	position: relative;
+	min-width: 960px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+

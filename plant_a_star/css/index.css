@@ -1,0 +1,167 @@
+.version.index /* version checker */
+{
+	color: #000007;
+	background-color: #86C2ED;
+}
+
+.html
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 960px;
+	min-height: 438px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	padding-bottom: 62px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#ppu1969
+{
+	width: 0.01px;
+	margin-right: -10000px;
+	margin-top: 47px;
+	margin-left: 105px;
+}
+
+#pu1969
+{
+	width: 0.01px;
+	margin-left: 189px;
+}
+
+#u1969
+{
+	z-index: 5;
+	width: 582px;
+	height: 559px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 15px;
+	background: transparent url("../images/main%20but-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u1969:hover
+{
+	width: 582px;
+	height: 559px;
+	min-height: 0px;
+	margin: 15px -10000px 0px 0px;
+	background: transparent url("../images/main%20but-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u1969:active
+{
+	width: 582px;
+	height: 559px;
+	min-height: 0px;
+	margin: 15px -10000px 0px 0px;
+	background: transparent url("../images/main%20but-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u1991
+{
+	z-index: 6;
+	width: 26px;
+	height: 574px;
+	background-color: #FFFFFF;
+	position: relative;
+	margin-right: -10000px;
+	left: 575px;
+}
+
+#pu1919
+{
+	width: 0.01px;
+	margin-top: 43px;
+}
+
+#u1919
+{
+	z-index: 2;
+	width: 750px;
+	padding-bottom: 650px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 152px;
+	background: transparent url("../images/img_3339.jpg") no-repeat left top;
+	background-size: contain;
+}
+
+#u1919:hover
+{
+	width: 750px;
+	min-height: 0px;
+	margin: 152px -10000px 0px 0px;
+	background: transparent url("../images/img_3339-background%20copy%203.jpg") no-repeat left top;
+	background-size: contain;
+}
+
+#u1919:active
+{
+	width: 750px;
+	min-height: 0px;
+	margin: 152px -10000px 0px 0px;
+	background: transparent url("../images/img_3339-background%20copy%205.jpg") no-repeat left top;
+	background-size: contain;
+}
+
+#u2044
+{
+	z-index: 4;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 211px;
+	left: 284px;
+}
+
+#u2119
+{
+	z-index: 7;
+	width: 428px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	left: 346px;
+}
+
+#u1902
+{
+	z-index: 3;
+	width: 24px;
+	height: 990px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 506px;
+	left: 994px;
+}
+
+.ie #u1902
+{
+	background-color: #FFFFFF;
+	opacity: 0.01;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+	filter: alpha(opacity=1);
+}
+
+body
+{
+	position: relative;
+	min-width: 960px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+

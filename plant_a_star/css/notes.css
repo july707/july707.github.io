@@ -1,0 +1,116 @@
+.version.notes /* version checker */
+{
+	color: #0000F0;
+	background-color: #CC4642;
+}
+
+.html
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 960px;
+	min-height: 499.54999999999905px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	padding-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page_position_content
+{
+	padding-top: 62px;
+	padding-bottom: 62px;
+	width: 0.01px;
+}
+
+#u2107
+{
+	z-index: 2;
+	width: 126px;
+	background-color: transparent;
+	margin-left: 374px;
+	position: relative;
+}
+
+#u2111-4
+{
+	z-index: 37;
+	width: 716px;
+	min-height: 129px;
+	background-color: transparent;
+	color: #0071BC;
+	line-height: 43px;
+	font-size: 36px;
+	font-weight: bold;
+	margin-left: 142px;
+	margin-top: 14px;
+	position: relative;
+}
+
+#pu2110-33
+{
+	width: 0.01px;
+	margin-top: 14px;
+}
+
+#u2110-33
+{
+	z-index: 4;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	left: -2px;
+}
+
+#u2112
+{
+	z-index: 41;
+	width: 135px;
+	height: 49px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 1468px;
+	left: 412px;
+	background: transparent url("../images/home%20but-normal.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u2112:hover
+{
+	width: 135px;
+	height: 49px;
+	min-height: 0px;
+	margin: 1468px -10000px 0px 0px;
+	background: transparent url("../images/home%20but-over.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u2112:active
+{
+	width: 135px;
+	height: 49px;
+	min-height: 0px;
+	margin: 1468px -10000px 0px 0px;
+	background: transparent url("../images/home%20but-down.png") no-repeat left top;
+	background-size: contain;
+}
+
+body
+{
+	position: relative;
+	min-width: 960px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+
