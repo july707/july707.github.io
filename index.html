@@ -3,12 +3,183 @@
 <title>july huang</title>
 <body>
 
+
+<script type="text/javascript">
+// <![CDATA[
+var colour="#000000";
+var sparkles=120;
+
+
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+
+window.onload=function() { if (document.getElementById) {
+  var i, rats, rlef, rdow;
+  for (var i=0; i<sparkles; i++) {
+    var rats=createDiv(3, 3);
+    rats.style.visibility="hidden";
+    document.body.appendChild(tiny[i]=rats);
+    starv[i]=0;
+    tinyv[i]=0;
+    var rats=createDiv(5, 5);
+    rats.style.backgroundColor="transparent";
+    rats.style.visibility="hidden";
+    var rlef=createDiv(1, 5);
+    var rdow=createDiv(5, 1);
+    rats.appendChild(rlef);
+    rats.appendChild(rdow);
+    rlef.style.top="2px";
+    rlef.style.left="0px";
+    rdow.style.top="0px";
+    rdow.style.left="2px";
+    document.body.appendChild(star[i]=rats);
+  }
+  set_width();
+  sparkle();
+}}
+
+function sparkle() {
+  var c;
+  if (x!=ox || y!=oy) {
+    ox=x;
+    oy=y;
+    for (c=0; c<sparkles; c++) if (!starv[c]) {
+      star[c].style.left=(starx[c]=x)+"px";
+      star[c].style.top=(stary[c]=y)+"px";
+      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+      star[c].style.visibility="visible";
+      starv[c]=50;
+      break;
+    }
+  }
+  for (c=0; c<sparkles; c++) {
+    if (starv[c]) update_star(c);
+    if (tinyv[c]) update_tiny(c);
+  }
+  setTimeout("sparkle()", 40);
+}
+
+function update_star(i) {
+  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+  if (starv[i]) {
+    stary[i]+=1+Math.random()*3;
+    if (stary[i]<shigh+sdown) {
+      star[i].style.top=stary[i]+"px";
+      starx[i]+=(i%5-2)/5;
+      star[i].style.left=starx[i]+"px";
+    }
+    else {
+      star[i].style.visibility="hidden";
+      starv[i]=0;
+      return;
+    }
+  }
+  else {
+    tinyv[i]=50;
+    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+    tiny[i].style.width="2px";
+    tiny[i].style.height="2px";
+    star[i].style.visibility="hidden";
+    tiny[i].style.visibility="visible"
+  }
+}
+
+function update_tiny(i) {
+  if (--tinyv[i]==25) {
+    tiny[i].style.width="1px";
+    tiny[i].style.height="1px";
+  }
+  if (tinyv[i]) {
+    tinyy[i]+=1+Math.random()*3;
+    if (tinyy[i]<shigh+sdown) {
+      tiny[i].style.top=tinyy[i]+"px";
+      tinyx[i]+=(i%5-2)/5;
+      tiny[i].style.left=tinyx[i]+"px";
+    }
+    else {
+      tiny[i].style.visibility="hidden";
+      tinyv[i]=0;
+      return;
+    }
+  }
+  else tiny[i].style.visibility="hidden";
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  set_scroll();
+  y=(e)?e.pageY:event.y+sdown;
+  x=(e)?e.pageX:event.x+sleft;
+}
+
+function set_scroll() {
+  if (typeof(self.pageYOffset)=="number") {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body.scrollTop || document.body.scrollLeft) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+	sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+
+window.onresize=set_width;
+function set_width() {
+  if (typeof(self.innerWidth)=="number") {
+    swide=self.innerWidth;
+    shigh=self.innerHeight;
+  }
+  else if (document.documentElement && document.documentElement.clientWidth) {
+    swide=document.documentElement.clientWidth;
+    shigh=document.documentElement.clientHeight;
+  }
+  else if (document.body.clientWidth) {
+    swide=document.body.clientWidth;
+    shigh=document.body.clientHeight;
+  }
+}
+
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height+"px";
+  div.style.width=width+"px";
+  div.style.overflow="hidden";
+  div.style.backgroundColor=colour;
+  return (div);
+}
+// ]]>
+</script>
+
+
+
+
 <STYLE TYPE="text/css"> <!-- BODY { font-size:120%; color:black; background-color:white; font-family:"arial"; } A:link{color:black; underline} --> </STYLE>
 
 <style>
 div.fixed {
     position: fixed;
-    top: 0;
+    bottom: 20px;
     left: 20px;
 }
 </style>
@@ -22,6 +193,11 @@ select{
 }
 </style>
 
+<div style="background-color:yellow;color:black;padding:0px;width:100%;position:fixed;left:0px;top:0;">
+   July Huang is a communication designer who believes in design that is honest, utilitarian and experimental with a poetic and humourous approach.  
+</div> 
+
+
 
 <div class="fixed">
 <p>
@@ -31,14 +207,6 @@ I
 design (at)<br>
 <a href="mailto:julyhuang17@gmail.com?Subject=Hello" target="_top">julyhuang17@gmail.com</a>
 </p>
-<p>
-visual merchandise, buy (at)<br>
-<a href="mailto:july@monkhousedesign.com?Subject=Hello" target="_top">july@monkhousedesign.com</a>
-</p>
-socialise (at)<br>
-<a href="mailto:july.huang@acnestudios.com?Subject=Hello" target="_top">july.huang@acnestudios.com</a>
-</p>
-
 <p>
 work (at)<br>
 7/21 Northumberland St,<br>
@@ -73,62 +241,122 @@ article {
 
 <article>
 <br><br>
+
+
+<a name="Cool_Room"></a>
+<img src="http://i.imgur.com/Xt2IiMD.jpg" alt=“CoolRoom”>
+<br><br>
+<span style="background-color:yellow;color:black;">
+Cool Room, On Going
+</span></br>
+Art direction and poster design for Melbourne dance club Cool Room.
+<br>
+<br>
+
+
 <a name="SS_Type"></a>
 <br>
 <img src="http://i.imgur.com/MLJTNs2.gif" alt=“SS_Type”>
+<span style="background-color:yellow;color:black;">
 Sensitive Type, On Going
+</span>
+<br>Sensitive Type is an online platform where typography and computational techniques are used <br>
+to interfere with communication, influence the emotions of the text and create its own narratives.
 <br><br><br><br>
-<a name="Cool_Room"></a>
-<img src="http://i.imgur.com/StLl4ha.jpg" alt=“CoolRoom”>
-<br><br>
-Cool Room, On Going
-<br>
-<br>
+
+
 <a name="About_Love"></a>
 <br>
 <img src="http://i.imgur.com/HqWoXhF.jpg" alt=“about_love”>
-<br><br><a href="http://soundcloud.com/aboutlove1">About Love</a>
+<br><br><span style="background-color:yellow;color:black;">
+<a href="http://soundcloud.com/aboutlove1">About Love</a>, Oct, 2016</span>
 <br>
-<a name="Food_Company"></a>
-<img src="http://i.imgur.com/RvYj0qU.jpg" alt=“VeggieBizniz”>
+Art direction and illustration for a Melbourne based love mixes channel.
+<br><br>
+
+
+<a name="Cailanzi"></a>
+<img src="http://i.imgur.com/RvYj0qU.jpg" alt=“Cailanzi”>
+<br><span style="background-color:yellow;color:black;">
+Cailanzi, Sept, 2016 </span>
 <br>
-Food Company, Identity design for my uncles business
+Identity design for my uncles food distribution business.<br>
+The box sealer tape design is an ultra utilitarian outcome<br>
+of capitals imperative towards global distribution systems.
 <br>
+
+
 <a name="SPOT_Cover"></a>
 <img src="http://i.imgur.com/NY1wvpW.jpg" alt=“SPOT_cover”>
-<br>
-SPOT Broadsheet
-<br><br><br>
+<br><span style="background-color:yellow;color:black;">
+SPOT Broadsheet, June, 2016</span><br>
+A newsprint publication showcasing urban spaces from a skaters viewpoint.<br>
+It is about a city full of marks and humanity.
+<br><br><br><br><br>
+
+
+<a name="Play"></a>
+<img src="http://i.imgur.com/BpuHumM.jpg" alt=“3D Printing”>
+<span style="background-color:yellow;color:black;">
+<br>Play, June, 2016</span><br>
+Play is a set of 3D printed objects exploring the idea of playing through<br> 
+the relationship between the flat image and its 3D form. The resuilt is a <br>
+print set of eye stencil, linkage toys and a piece of DIY furniture.
+<br><br><br><br><br>
+
+
 <a name="Urgent_Mail"></a>
-<img src="http://i.imgur.com/svqYqn0.jpg" alt=“Urgent_Reply_Mail”>
+<img src="http://i.imgur.com/CoCo2t8.jpg" alt=“Urgent_Reply_Mail”>
 <br><br>
-Urgent Reply Mail
+<span style="background-color:yellow;color:black;">
+Urgent Reply Mail, May, 2016</span><br>
+A zine that asks questions and answers questions about skaters as a subculture.<br>
+Featuring an interview with the skater, writer and creative director Max Olijnyk <br>
+alongside some seemingly random questions that speak the real truth.<br>
 <br><br><br>
+
+
 <a name="Monk_Ey"></a>
-<img src="http://i.imgur.com/zsjGnly.jpg" alt=“Monk Ey”>
+<img src="http://i.imgur.com/12hGb9V.jpg" alt=“Monk Ey”>
 <br><br>
-MonkEy Session IPA
+<span style="background-color:yellow;color:black;">
+MonkEy Session IPA, May, 2016</span><br>
+A Lychey Peachy Faced Session IPA. This Chinese peach blossom beer is fresh for your<br>
+complexion. Those aspiring to a peachy cheeked visage and cherubic vitality will enjoy.<br>
 <br><br><br>
+
+
 <a name="Lets_Go_Palace"></a>
 <img src="http://i.imgur.com/Qjy6B8D.jpg" alt=“LetsGoPalace”>
 <br><br>
-Lets Go Palace
-<br><br><br>
+<span style="background-color:yellow;color:black;">
+Lets Go Palace, April, 2016</span><br>
+A collage photo book discussing skate humour and the <br>
+unapologetic native to skateboarding subculture.
+<br><br><br><br><br>
+
+
 <img src="http://i.imgur.com/EXUq1I5.gif" alt=“ArtPlus gif”>
 <a name="Art_Plus"></a>
 <img src="http://i.imgur.com/CClboX5.jpg" alt=“ArtPlus poster”>
 <img src="http://i.imgur.com/O7Z6GCk.jpg" alt=“ArtPlus collaterals”>
-<br><br>
-<a href="http://www.fjartplus.com">Art Plus</a>
+<br><br><span style="background-color:yellow;color:black;">
+<a href="http://www.fjartplus.com">Art Plus</a>, Dec, 2015</span><br>
+The exhibition Art+ at the Fifth Space in Shanghai explored the intersection <br>
+between fashion, craft, sculpture and art. This concept is delivered through a<br>
+strong visual language which unifies the different stages and forms of the artwork.<br>
+
 <br>
+
+
 <a name="Plant_A_Star"></a>
 <img src="http://i.imgur.com/fO7IfKo.jpg" alt=“Plant a Star”>
-<br><a href="july707.github.io/plant_a_star/index (pre-home).html">Plant a Star</a>
+<span style="background-color:yellow;color:black;">
+<br><a href="file:///Users/July/Creative%20Cloud%20Files/website%20juju/plant_a_star/index%20(pre-home).html">Plant a Star</a>, Oct, 2015</span>
+<br>An open source International amateur astronomy conference, heavily process and research based.<br>
 <br><br><br>
-<a name="Play"></a>
-<img src="http://i.imgur.com/BpuHumM.jpg" alt=“3D Printing”>
-<br>Play<br>
-Play is a set of 3D printed objects exploring the idea of playing through the relationship between the flat image and its 3D form. <br>The resuilt is a print set of eye stencil, linkage toys and a piece of DIY furniture.<br><br><br>
+
+
 </article>
 
 
@@ -137,17 +365,17 @@ Play is a set of 3D printed objects exploring the idea of playing through the re
 
 <select id="my_selection">
 <option selected disabled class="hideoption">Projects</option>
-<option value="x" href="#SS_Type">Sensitive Type, on going, Sept, 2016</option>
 <option value="y" href="#Cool_Room">Cool Room, on going, Dec, 2016</option>
+<option value="x" href="#SS_Type">Sensitive Type, on going, Sept, 2016</option>
 <option value="y" href="#About_Love">About Love, Oct, 2016</option>
-<option value="y" href="#Food_Company">Food Company, Sept, 2016</option>
+<option value="y" href="#Cailanzi">Cailanzi, Sept, 2016</option>
 <option value="x" href="#SPOT_Cover">SPOT Broadsheet, June, 2016</option>
+<option value="y" href="#Play">Play, June, 2016</option>
 <option value="y" href="#Urgent_Mail">Urgent Reply Mail, May, 2016</option>
 <option value="y" href="#Monk_Ey">Monk Ey Session IPA, May, 2016</option>
 <option value="x" href="#Lets_Go_Palace">Lets Go Palace, Apr, 2016</option>
 <option value="y" href="#Art_Plus">Art Plus, Dec, 2015</option>
 <option value="y" href="#Plant_A_Star">Plant A Star, Oct, 2015</option>
-<option value="y" href="#Play">Play, June, 2016</option>
 </select>
 
 <script>
