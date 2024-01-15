@@ -45,7 +45,7 @@ p{
 .right{
     /* background-color: rgb(242, 45, 166); */
     /* box-sizing: border-box; */
-    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 
