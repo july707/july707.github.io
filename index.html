@@ -1,590 +1,71 @@
 <!DOCTYPE html>
-
-<html>
-
-<title>july huang</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<body>
-<style>
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.left {
-  left: 20px;
-  background-color: white;
-}
-
-.right {
-  right: 0;
-  background-color: white;
-}
-
-.images {
-  width: 100%;
-  height: 100%;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-</style>
-
-
-<script type="text/javascript">
-
-// <![CDATA[
-
-var colour="#000000";
-
-var sparkles=120;
-
-
-
-var x=ox=400;
-
-var y=oy=300;
-
-var swide=800;
-
-var shigh=600;
-
-var sleft=sdown=0;
-
-var tiny=new Array();
-
-var star=new Array();
-
-var starv=new Array();
-
-var starx=new Array();
-
-var stary=new Array();
-
-var tinyx=new Array();
-
-var tinyy=new Array();
-
-var tinyv=new Array();
-
-
-
-window.onload=function() { if (document.getElementById) {
-
-  var i, rats, rlef, rdow;
-
-  for (var i=0; i<sparkles; i++) {
-
-    var rats=createDiv(3, 3);
-
-    rats.style.visibility="hidden";
-
-    document.body.appendChild(tiny[i]=rats);
-
-    starv[i]=0;
-
-    tinyv[i]=0;
-
-    var rats=createDiv(5, 5);
-
-    rats.style.backgroundColor="transparent";
-
-    rats.style.visibility="hidden";
-
-    var rlef=createDiv(1, 5);
-
-    var rdow=createDiv(5, 1);
-
-    rats.appendChild(rlef);
-
-    rats.appendChild(rdow);
-
-    rlef.style.top="2px";
-
-    rlef.style.left="0px";
-
-    rdow.style.top="0px";
-
-    rdow.style.left="2px";
-
-    document.body.appendChild(star[i]=rats);
-
-  }
-
-  set_width();
-
-  sparkle();
-
-}}
-
-
-
-function sparkle() {
-
-  var c;
-
-  if (x!=ox || y!=oy) {
-
-    ox=x;
-
-    oy=y;
-
-    for (c=0; c<sparkles; c++) if (!starv[c]) {
-
-      star[c].style.left=(starx[c]=x)+"px";
-
-      star[c].style.top=(stary[c]=y)+"px";
-
-      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
-
-      star[c].style.visibility="visible";
-
-      starv[c]=50;
-
-      break;
-
-    }
-
-  }
-
-  for (c=0; c<sparkles; c++) {
-
-    if (starv[c]) update_star(c);
-
-    if (tinyv[c]) update_tiny(c);
-
-  }
-
-  setTimeout("sparkle()", 40);
-
-}
-
-
-
-function update_star(i) {
-
-  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
-
-  if (starv[i]) {
-
-    stary[i]+=1+Math.random()*3;
-
-    if (stary[i]<shigh+sdown) {
-
-      star[i].style.top=stary[i]+"px";
-
-      starx[i]+=(i%5-2)/5;
-
-      star[i].style.left=starx[i]+"px";
-
-    }
-
-    else {
-
-      star[i].style.visibility="hidden";
-
-      starv[i]=0;
-
-      return;
-
-    }
-
-  }
-
-  else {
-
-    tinyv[i]=50;
-
-    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
-
-    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
-
-    tiny[i].style.width="2px";
-
-    tiny[i].style.height="2px";
-
-    star[i].style.visibility="hidden";
-
-    tiny[i].style.visibility="visible"
-
-  }
-
-}
-
-
-
-function update_tiny(i) {
-
-  if (--tinyv[i]==25) {
-
-    tiny[i].style.width="1px";
-
-    tiny[i].style.height="1px";
-
-  }
-
-  if (tinyv[i]) {
-
-    tinyy[i]+=1+Math.random()*3;
-
-    if (tinyy[i]<shigh+sdown) {
-
-      tiny[i].style.top=tinyy[i]+"px";
-
-      tinyx[i]+=(i%5-2)/5;
-
-      tiny[i].style.left=tinyx[i]+"px";
-
-    }
-
-    else {
-
-      tiny[i].style.visibility="hidden";
-
-      tinyv[i]=0;
-
-      return;
-
-    }
-
-  }
-
-  else tiny[i].style.visibility="hidden";
-
-}
-
-
-
-document.onmousemove=mouse;
-
-function mouse(e) {
-
-  set_scroll();
-
-  y=(e)?e.pageY:event.y+sdown;
-
-  x=(e)?e.pageX:event.x+sleft;
-
-}
-
-
-
-function set_scroll() {
-
-  if (typeof(self.pageYOffset)=="number") {
-
-    sdown=self.pageYOffset;
-
-    sleft=self.pageXOffset;
-
-  }
-
-  else if (document.body.scrollTop || document.body.scrollLeft) {
-
-    sdown=document.body.scrollTop;
-
-    sleft=document.body.scrollLeft;
-
-  }
-
-  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
-
-    sleft=document.documentElement.scrollLeft;
-
-	sdown=document.documentElement.scrollTop;
-
-  }
-
-  else {
-
-    sdown=0;
-
-    sleft=0;
-
-  }
-
-}
-
-
-
-window.onresize=set_width;
-
-function set_width() {
-
-  if (typeof(self.innerWidth)=="number") {
-
-    swide=self.innerWidth;
-
-    shigh=self.innerHeight;
-
-  }
-
-  else if (document.documentElement && document.documentElement.clientWidth) {
-
-    swide=document.documentElement.clientWidth;
-
-    shigh=document.documentElement.clientHeight;
-
-  }
-
-  else if (document.body.clientWidth) {
-
-    swide=document.body.clientWidth;
-
-    shigh=document.body.clientHeight;
-
-  }
-
-}
-
-
-
-function createDiv(height, width) {
-
-  var div=document.createElement("div");
-
-  div.style.position="absolute";
-
-  div.style.height=height+"px";
-
-  div.style.width=width+"px";
-
-  div.style.overflow="hidden";
-
-  div.style.backgroundColor=colour;
-
-  return (div);
-
-}
-
-// ]]>
-
-</script>
-
-
-
-
-<div class="split left">
-
-
-
-
-<STYLE TYPE="text/css"> <!-- BODY { font-size:120%; color:black; background-color:white; font-family:"arial"; } A:link{color:black; underline} --> </STYLE>
-
-
-
-<style>
-
-div.fixed {
-
-    position: fixed;
-
-    Top: 40px;
-
-    left: 20px;
-
-}
-
-</style>
-
-
-
-
-<style>
-
-select{
-
-     font-size: 110%;
-
-     position: fixed;
-
-     font-family: arial;
-
-     right: 20px;
-
-     bottom: 40px;
-
-}
-
-</style>
-<span style="background-color: #e6e6e6; font-size: 100%; font-family: arial;"><a href="#" rel="home_page">july707</a> </span>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("div").scrollLeft(100);
-    });
-});
-</script>
-</head>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: black; 
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
-}
-</style>
-</head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="lib/p5.min.js"></script>
+    <title>july707</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
 <body>
 
-<br>
-<br>
-<br>
-<div style="border:1px solid black; background:white; width:400px; height:200px; overflow:auto; left: 40px; padding: 1em;">
+    <div class="mainWrapper">
+        <div id="canvasWrapper"></div>
+        <div class="left main">
+            <div class="headline-box">
+                <a href="/">july707</a>
+            </div>
 
-I
+            <div class="info-box">
+                <div><p>I</p></div>
+                <div><p>
+                    freelance (at) <br>
+                    AKQA Shanghai <br>
+                    WWWESH STUDIO Tokyo
+                </p></div>
+                <div><p>
+                    contact me (at) <br>
+                    <a href="mailto:julyhuang17@gmail.com?Subject=Hello">julyhuang17@gmail.com</a> <br>
+                    <a target="_blank" href="https://www.instagram.com/july707/">instagram</a> <br>
+                    +(00)86 1367 122 0036
+                </p></div>
+            </div>
+
+            <div class="link-box">
+                <a href="portfolio.pdf">portfolio.pdf</a>
+                <p>click to view art direction and design works here.</p>
+            </div>
+            <div class="link-box">
+                <a target="_blank" href="https://www.instagram.com/memoria_objects/">ℳℯm❀ria ❀bjℯcts</a>
+                <p>click to view art direction and design works here.</p>
+            </div>
+        </div>
+        <div class="right main">
+           
+            <!-- post 1 -->
+            <div class="post-box">
+                <p class="highlight">*warning* highly unprofessional</p>
+                <img src="images/yokohamaFilm.png" alt="">
+                <p>identity to come* 2024</p>
+            </div>
+
+            <!-- post 2 -->
+            <div class="post-box">
+                <img src="images/abcSticker1.jpg" alt="">
+                <img src="images/abcSticker2.jpg" alt="">
+                <p>portal sticker</p> <br>
+                <p>printed sticker, digital image, for abc</p> <br>
+                <p>Hangzhou 2022</p>
+            </div>
+
+            <!-- and so on, just copy paste the structure above for more posts -->
 
 
-<p>
 
-freelance (at)<br>
-
-AKQA Shanghai<br> 
-WWWESH STUDIO Tokyo<br>
-
-</p>
-
-<p>
-
-contact me (at)<br>
-
-<a href="mailto:julyhuang17@gmail.com?Subject=Hello" target="_top">julyhuang17@gmail.com</a><br>
-<a href="https://www.instagram.com/july707/">instagram</a><br>
-+(00)86 1367 122 0036
-
-</p>
-
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
-
-</div>
-
-
-<style>
-
-div.fixed {
-
-    position: fixed;
-
-    Top: 120px;
-
-    left: 20px;
-
-}
-
-</style>
-
-<br>
-<a name="Professional_Folio"></a>
-
-<br>
-
-<a href="https://july707.github.io/folio23/portfolio.pdf/" target="_blank">portfolio.pdf</a>
-
-<br>
-
-click to view art direction and design works here.
-
-<br>
-<br>
-
-
-<a href="https://www.instagram.com/memoria_objects/"> &#8499&#8495m&#10048;ria &#10048;bj&#8495cts</a><br>
-ceramics project
-
-<br>
-<br>
-</article>
-
-
-</div>
-</div>
-   
-
-
-<div class="split right",style="background-color: #e6e6e6; font-size: 100%; font-family: arial;">
-
-    <span style="background-color: #e6e6e6; font-size: 100%; font-family: arial;">
-    *warning* highly unprofessional</span>
-
-
-     <div class=“images”>
-     <img src="https://i.imgur.com/HJxpXoA.png" alt="banner">
-    </div>
-    identity to come* 2024 <br>
-    <hr>
-
-     <div class=“images”>
-     <img src="https://i.imgur.com/0ezN2gN.jpg" alt="banner">
-     <br>
-     <img src="https://i.imgur.com/6zKn0fS.png" alt="banner1">
-    </div>
-    tyezine & den souvenir <br>
-    booth banner 2023
-    <hr>
-
-
-    <div class=“images”>
-      <img src="https://i.imgur.com/FhweSfI.jpg" alt="nail art" >
-    </div>
-
-    superfluours project<br>
-    poster, digital image, commissioned by Wry Nail Bangkok 2022
-
-    <hr>
-
-    <div class=“images”>
-      <img src="https://i.imgur.com/k2N7Nps.jpg" alt="sticker">
-      <img src="https://i.imgur.com/nAmon5h.jpg" alt="sticker">
-
-    </div>
-
-    portal sticker <br>
-    printed sticker, digital image, for abc Hangzhou 2022
-    <hr>
-
- 
-
-
-    <br>
-    <br>
-
-</div>
-
-
-
-
-
-
-
-</body>
-
 </html>
